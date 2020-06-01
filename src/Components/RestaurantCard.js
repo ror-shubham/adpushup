@@ -2,10 +2,10 @@ import React, {useState} from "react";
 import {getRandomImage} from "../helpers";
 
 function RestaurantCard({restaurant}) {
-  const [foodType] = useState(restaurant.food_types.reduce((acc, curr) => acc + ', ' + curr))
+  const [foodType] = useState(restaurant.food_types.reduce((acc, curr) => acc + ', ' + curr));
   return (
     <div className='restaurant-card'>
-      <img src={getRandomImage()} alt=""/>
+      <img src={getRandomImage(restaurant.name)} alt=""/>
       <div className='title'>
         {restaurant.name}
       </div>

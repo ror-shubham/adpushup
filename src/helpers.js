@@ -12,6 +12,10 @@ const images = [
   "https://images.unsplash.com/photo-1504544750208-dc0358e63f7f?auto=format&fit=crop&w=500&q=60"
 ];
 
-export function getRandomImage() {
-  return images[Math.floor(Math.random() * images.length)]
+export function getRandomImage(str) {
+  let hashNum = 0;
+  for (let i = 0; i < str.length; i++){
+    hashNum += str[i].charCodeAt(0);
+  }
+  return images[hashNum%images.length]
 }
